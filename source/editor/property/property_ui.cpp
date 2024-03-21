@@ -142,23 +142,21 @@ namespace Bamboo
 				EPropertyType property_type = getPropertyType(prop.get_type());
 				ASSERT(property_type.second != EPropertyContainerType::Map, "don't support map container property type now");
 
-				rttr::variant& variant = prop.get_value(instance);
-				if (property_type.second == EPropertyContainerType::Mono)
-				{
-					m_property_constructors[property_type.first](prop_name, variant);
-					prop.set_value(instance, variant);
-				}
-				else if (property_type.second == EPropertyContainerType::Array)
-				{
-					auto view = variant.create_sequential_view();
-					for (size_t i = 0; i < view.get_size(); ++i)
-					{
-						rttr::variant sub_variant = view.get_value(i);
-						std::string sub_prop_name = prop_name + "_" + std::to_string(i);
-						m_property_constructors[property_type.first](sub_prop_name, sub_variant);
-						view.set_value(i, sub_variant);
+				rttr::variant variant = prop.get_value(instance);
+				if (variant) {
+					if (property_type.second == EPropertyContainerType::Mono) {
+						m_property_constructors[property_type.first](prop_name, variant);
+						prop.set_value(instance, variant);
+					} else if (property_type.second == EPropertyContainerType::Array) {
+						auto view = variant.create_sequential_view();
+						for (size_t i = 0; i < view.get_size(); ++i) {
+							rttr::variant sub_variant = view.get_value(i);
+							std::string sub_prop_name = prop_name + "_" + std::to_string(i);
+							m_property_constructors[property_type.first](sub_prop_name, sub_variant);
+							view.set_value(i, sub_variant);
+						}
+						prop.set_value(instance, variant);
 					}
-					prop.set_value(instance, variant);
 				}
 			}
 			ImGui::TreePop();

@@ -20,10 +20,10 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("light", cereal::base_class<LightComponent>(this)));
-			ar(cereal::make_nvp("radius", m_radius));
-			ar(cereal::make_nvp("linear_attenuation", m_linear_attenuation));
-			ar(cereal::make_nvp("quadratic_attenuation", m_quadratic_attenuation));
+			ar(CEREAL_NVP_("light", cereal::base_class<LightComponent>(this)));
+			ar(CEREAL_NVP_("radius", m_radius));
+			ar(CEREAL_NVP_("linear_attenuation", m_linear_attenuation));
+			ar(CEREAL_NVP_("quadratic_attenuation", m_quadratic_attenuation));
 		}
 	};
 }

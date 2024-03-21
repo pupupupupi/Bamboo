@@ -46,16 +46,16 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("width", m_width));
-			ar(cereal::make_nvp("height", m_height));
-			ar(cereal::make_nvp("min_filter", m_min_filter));
-			ar(cereal::make_nvp("mag_filter", m_mag_filter));
-			ar(cereal::make_nvp("address_mode_u", m_address_mode_u));
-			ar(cereal::make_nvp("address_mode_v", m_address_mode_v));
-			ar(cereal::make_nvp("address_mode_w", m_address_mode_w));
-			ar(cereal::make_nvp("texture_type", m_texture_type));
-			ar(cereal::make_nvp("pixel_type", m_pixel_type));
-			ar(cereal::make_nvp("image_data", m_image_data));
+			ar(CEREAL_NVP_("width", m_width));
+			ar(CEREAL_NVP_("height", m_height));
+			ar(CEREAL_NVP_("min_filter", m_min_filter));
+			ar(CEREAL_NVP_("mag_filter", m_mag_filter));
+			ar(CEREAL_NVP_("address_mode_u", m_address_mode_u));
+			ar(CEREAL_NVP_("address_mode_v", m_address_mode_v));
+			ar(CEREAL_NVP_("address_mode_w", m_address_mode_w));
+			ar(CEREAL_NVP_("texture_type", m_texture_type));
+			ar(CEREAL_NVP_("pixel_type", m_pixel_type));
+			ar(CEREAL_NVP_("image_data", m_image_data));
 		}
 	};
 }

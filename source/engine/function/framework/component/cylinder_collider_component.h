@@ -18,9 +18,9 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("collider_component", cereal::base_class<ColliderComponent>(this)));
-			ar(cereal::make_nvp("radius", m_radius));
-			ar(cereal::make_nvp("height", m_height));
+			ar(CEREAL_NVP_("collider_component", cereal::base_class<ColliderComponent>(this)));
+			ar(CEREAL_NVP_("radius", m_radius));
+			ar(CEREAL_NVP_("height", m_height));
 		}
 	};
 }

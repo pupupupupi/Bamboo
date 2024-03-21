@@ -20,8 +20,8 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("mesh", cereal::base_class<Mesh>(this)));
-			ar(cereal::make_nvp("vertices", m_vertices));
+			ar(CEREAL_NVP_("mesh", cereal::base_class<Mesh>(this)));
+			ar(CEREAL_NVP_("vertices", m_vertices));
 		}
 	};
 }

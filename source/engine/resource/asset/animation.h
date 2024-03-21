@@ -20,9 +20,9 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("path_type", m_path_type));
-			ar(cereal::make_nvp("bone_name", m_bone_name));
-			ar(cereal::make_nvp("sampler_index", m_sampler_index));
+			ar(CEREAL_NVP_("path_type", m_path_type));
+			ar(CEREAL_NVP_("bone_name", m_bone_name));
+			ar(CEREAL_NVP_("sampler_index", m_sampler_index));
 		}
 	};
 
@@ -42,9 +42,9 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("interp_type", m_interp_type));
-			ar(cereal::make_nvp("times", m_times)); 
-			ar(cereal::make_nvp("values", m_values));
+			ar(CEREAL_NVP_("interp_type", m_interp_type));
+			ar(CEREAL_NVP_("times", m_times)); 
+			ar(CEREAL_NVP_("values", m_values));
 		}
 	};
 
@@ -65,9 +65,9 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("name", m_name));
-			ar(cereal::make_nvp("samplers", m_samplers)); 
-			ar(cereal::make_nvp("channels", m_channels));
+			ar(CEREAL_NVP_("name", m_name));
+			ar(CEREAL_NVP_("samplers", m_samplers)); 
+			ar(CEREAL_NVP_("channels", m_channels));
 		}
 	};
 }

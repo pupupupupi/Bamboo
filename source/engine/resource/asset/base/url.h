@@ -57,7 +57,7 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("url", m_url));
+			ar(CEREAL_NVP_("url", m_url));
 		}
 
 		void toRelative();

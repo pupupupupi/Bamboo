@@ -19,7 +19,7 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("component", cereal::base_class<ColliderComponent>(this)));
+			ar(CEREAL_NVP_("component", cereal::base_class<ColliderComponent>(this)));
 		}
 
 		virtual void bindRefs() override;

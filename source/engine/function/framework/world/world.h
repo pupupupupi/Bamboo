@@ -34,7 +34,7 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("entities", m_entities));
+			ar(CEREAL_NVP_("entities", m_entities));
 		}
 
 		friend class WorldManager;

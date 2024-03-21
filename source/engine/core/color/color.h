@@ -47,9 +47,9 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("r", r));
-			ar(cereal::make_nvp("g", g));
-			ar(cereal::make_nvp("b", b));
+			ar(CEREAL_NVP_("r", r));
+			ar(CEREAL_NVP_("g", g));
+			ar(CEREAL_NVP_("b", b));
 		}
 	};
 
@@ -95,10 +95,10 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("r", r));
-			ar(cereal::make_nvp("g", g));
-			ar(cereal::make_nvp("b", b));
-			ar(cereal::make_nvp("a", a));
+			ar(CEREAL_NVP_("r", r));
+			ar(CEREAL_NVP_("g", g));
+			ar(CEREAL_NVP_("b", b));
+			ar(CEREAL_NVP_("a", a));
 		}
 	};
 }

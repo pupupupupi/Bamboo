@@ -24,8 +24,8 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("texture", cereal::base_class<Texture>(this)));
-			ar(cereal::make_nvp("compression_mode", m_compression_mode));
+			ar(CEREAL_NVP_("texture", cereal::base_class<Texture>(this)));
+			ar(CEREAL_NVP_("compression_mode", m_compression_mode));
 		}
 
 		bool compress();

@@ -24,8 +24,8 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("component", cereal::base_class<Component>(this)));
-			ar(cereal::make_nvp("position", m_position));
+			ar(CEREAL_NVP_("component", cereal::base_class<Component>(this)));
+			ar(CEREAL_NVP_("position", m_position));
 		}
 	};
 }

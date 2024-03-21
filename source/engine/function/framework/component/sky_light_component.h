@@ -27,8 +27,8 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("light", cereal::base_class<LightComponent>(this)));
-			ar(cereal::make_nvp("asset_ref", cereal::base_class<IAssetRef>(this)));
+			ar(CEREAL_NVP_("light", cereal::base_class<LightComponent>(this)));
+			ar(CEREAL_NVP_("asset_ref", cereal::base_class<IAssetRef>(this)));
 		}
 
 		virtual void bindRefs() override;

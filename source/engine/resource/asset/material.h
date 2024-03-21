@@ -23,12 +23,12 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("asset_ref", cereal::base_class<IAssetRef>(this)));
-			ar(cereal::make_nvp("base_color_factor", m_base_color_factor));
-			ar(cereal::make_nvp("emissive_factor", m_emissive_factor));
-			ar(cereal::make_nvp("metallic_factor", m_metallic_factor));
-			ar(cereal::make_nvp("roughness_factor", m_roughness_factor));
-			ar(cereal::make_nvp("contains_occlusion_channel", m_contains_occlusion_channel));
+			ar(CEREAL_NVP_("asset_ref", cereal::base_class<IAssetRef>(this)));
+			ar(CEREAL_NVP_("base_color_factor", m_base_color_factor));
+			ar(CEREAL_NVP_("emissive_factor", m_emissive_factor));
+			ar(CEREAL_NVP_("metallic_factor", m_metallic_factor));
+			ar(CEREAL_NVP_("roughness_factor", m_roughness_factor));
+			ar(CEREAL_NVP_("contains_occlusion_channel", m_contains_occlusion_channel));
 		}
 
 		virtual void bindRefs() override;

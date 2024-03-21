@@ -55,20 +55,20 @@ namespace Bamboo
 		void serialize(Archive& ar)
 		{
 			// component
-			ar(cereal::make_nvp("component", cereal::base_class<Component>(this)));
+			ar(CEREAL_NVP_("component", cereal::base_class<Component>(this)));
 
 			// projection
-			ar(cereal::make_nvp("fovy", m_fovy));
-			ar(cereal::make_nvp("near", m_near));
-			ar(cereal::make_nvp("far", m_far));
+			ar(CEREAL_NVP_("fovy", m_fovy));
+			ar(CEREAL_NVP_("near", m_near));
+			ar(CEREAL_NVP_("far", m_far));
 
 			// movement
-			ar(cereal::make_nvp("move_speed", m_move_speed));
-			ar(cereal::make_nvp("turn_speed", m_turn_speed));
-			ar(cereal::make_nvp("zoom_speed", m_zoom_speed));
+			ar(CEREAL_NVP_("move_speed", m_move_speed));
+			ar(CEREAL_NVP_("turn_speed", m_turn_speed));
+			ar(CEREAL_NVP_("zoom_speed", m_zoom_speed));
 
 			// postprocessing
-			ar(cereal::make_nvp("exposure", m_exposure));
+			ar(CEREAL_NVP_("exposure", m_exposure));
 		}
 
 		void onKey(const std::shared_ptr<class Event>& event);

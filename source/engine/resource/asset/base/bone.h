@@ -33,11 +33,11 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("name", m_name));
-			ar(cereal::make_nvp("parent", m_parent));
-			ar(cereal::make_nvp("children", m_children));
-			ar(cereal::make_nvp("local_bind_pose_transform", m_local_bind_pose_transform));
-			ar(cereal::make_nvp("global_inverse_bind_pose_matrix", m_global_inverse_bind_pose_matrix));
+			ar(CEREAL_NVP_("name", m_name));
+			ar(CEREAL_NVP_("parent", m_parent));
+			ar(CEREAL_NVP_("children", m_children));
+			ar(CEREAL_NVP_("local_bind_pose_transform", m_local_bind_pose_transform));
+			ar(CEREAL_NVP_("global_inverse_bind_pose_matrix", m_global_inverse_bind_pose_matrix));
 		}
 	};
 }

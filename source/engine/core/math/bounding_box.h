@@ -23,8 +23,8 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("min", m_min));
-			ar(cereal::make_nvp("max", m_max));
+			ar(CEREAL_NVP_("min", m_min));
+			ar(CEREAL_NVP_("max", m_max));
 		}
 	};
 }

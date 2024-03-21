@@ -29,8 +29,8 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("tick_enabled", m_tick_enabled));
-			ar(cereal::make_nvp("tick_interval", m_tick_interval));
+			ar(CEREAL_NVP_("tick_enabled", m_tick_enabled));
+			ar(CEREAL_NVP_("tick_interval", m_tick_interval));
 		}
 
 		bool m_tick_enabled = false;
@@ -68,14 +68,14 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("tickable", cereal::base_class<ITickable>(this)));
+			ar(CEREAL_NVP_("tickable", cereal::base_class<ITickable>(this)));
 		}
 	};
 }
 
 #define REGISTER_REFLECTION(parent_class) \
 	RTTR_REGISTRATION_FRIEND \
-	RTTR_ENABLE(Bamboo::##parent_class) \
+	RTTR_ENABLE(Bamboo::parent_class) \
 	friend class cereal::access;
 
 #define POLYMORPHIC_DECLARATION virtual void inflate() override;

@@ -93,13 +93,13 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("tickable", cereal::base_class<ITickable>(this)));
+			ar(CEREAL_NVP_("tickable", cereal::base_class<ITickable>(this)));
 
-			ar(cereal::make_nvp("name", m_name));
-			ar(cereal::make_nvp("id", m_id));
-			ar(cereal::make_nvp("parent_id", m_pid));
-			ar(cereal::make_nvp("child_ids", m_cids));
-			ar(cereal::make_nvp("components", m_components));
+			ar(CEREAL_NVP_("name", m_name));
+			ar(CEREAL_NVP_("id", m_id));
+			ar(CEREAL_NVP_("parent_id", m_pid));
+			ar(CEREAL_NVP_("child_ids", m_cids));
+			ar(CEREAL_NVP_("components", m_components));
 		}
 
 		void updateTransforms();

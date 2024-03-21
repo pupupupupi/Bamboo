@@ -28,13 +28,13 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("component", cereal::base_class<Component>(this)));
-			ar(cereal::make_nvp("motion_type", m_motion_type));
-			ar(cereal::make_nvp("friction", m_friction));
-			ar(cereal::make_nvp("restitution", m_restitution));
-			ar(cereal::make_nvp("linear_damping", m_linear_damping));
-			ar(cereal::make_nvp("angular_damping", m_angular_damping));
-			ar(cereal::make_nvp("gravity_factor", m_gravity_factor));
+			ar(CEREAL_NVP_("component", cereal::base_class<Component>(this)));
+			ar(CEREAL_NVP_("motion_type", m_motion_type));
+			ar(CEREAL_NVP_("friction", m_friction));
+			ar(CEREAL_NVP_("restitution", m_restitution));
+			ar(CEREAL_NVP_("linear_damping", m_linear_damping));
+			ar(CEREAL_NVP_("angular_damping", m_angular_damping));
+			ar(CEREAL_NVP_("gravity_factor", m_gravity_factor));
 		}
 	};
 }

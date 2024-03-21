@@ -15,7 +15,7 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("texture", cereal::base_class<Texture>(this)));
+			ar(CEREAL_NVP_("texture", cereal::base_class<Texture>(this)));
 		}
 	};
 }

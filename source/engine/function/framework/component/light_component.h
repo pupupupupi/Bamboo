@@ -23,10 +23,10 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("component", cereal::base_class<Component>(this)));
-			ar(cereal::make_nvp("intensity", m_intensity));
-			ar(cereal::make_nvp("color", m_color));
-			ar(cereal::make_nvp("cast_shadow", m_cast_shadow));
+			ar(CEREAL_NVP_("component", cereal::base_class<Component>(this)));
+			ar(CEREAL_NVP_("intensity", m_intensity));
+			ar(CEREAL_NVP_("color", m_color));
+			ar(CEREAL_NVP_("cast_shadow", m_cast_shadow));
 		}
 	};
 }

@@ -23,9 +23,9 @@ namespace Bamboo
 		template<class Archive>
 		void serialize(Archive& ar)
 		{
-			ar(cereal::make_nvp("name", m_name));
-			ar(cereal::make_nvp("bones", m_bones));
-			ar(cereal::make_nvp("root_bone_index", m_root_bone_index));
+			ar(CEREAL_NVP_("name", m_name));
+			ar(CEREAL_NVP_("bones", m_bones));
+			ar(CEREAL_NVP_("root_bone_index", m_root_bone_index));
 		}
 	};
 }

@@ -95,7 +95,9 @@ namespace Bamboo
 			{
 				if (isFile(file))
 				{
-					last_write_time = std::max(last_write_time, std::chrono::duration_cast<std::chrono::seconds>(std::filesystem::last_write_time(file).time_since_epoch()).count());
+					auto file_time = std::chrono::duration_cast<std::chrono::seconds>(
+                 		std::filesystem::last_write_time(file).time_since_epoch()).count();
+					last_write_time = std::max(last_write_time, static_cast<long long int>(file_time));
 				}
 			}
 			return std::to_string(last_write_time);
